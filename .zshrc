@@ -2,9 +2,13 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/Applications/Racket v6.9/bin:$PATH"
 export PATH=/Users/JAlbers/.cargo/bin/racer:/Users/JAlbers/.cargo/bin:$PATH
+export PATH=$HOME/Library/Haskell/bin:$PATH
+export PATH=$HOME/Library/TeX/texbin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/JAlbers/.oh-my-zsh
+
+
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -23,6 +27,8 @@ ZSH_THEME="bureau"
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=13
+
+export VISUAL=emacs
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -85,7 +91,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias bx='bitchx '
+
 . /usr/local/etc/profile.d/z.sh
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(thefuck --alias)"
+
+
+export FZF_DEFAULT_OPTS="--extended --inline-info"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh --extended

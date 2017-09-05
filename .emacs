@@ -1,5 +1,3 @@
-
-
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/")
@@ -17,12 +15,16 @@
 (require 'yasnippet)
 (yas-global-mode 0)
 
-;(defun my:ac-c-header-init()
-;  (require 'auto-complete-c-headers)
-;  (add-to-list 'ac-source 'ac-sources-c-headers)
-;  (add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1
-; /usr/local/include"
-	      ; ))
+; For compiling text to pdf automatically
+(require 'tex)
+(TeX-global-PDF-mode t)
+
+(defun my:ac-c-header-init()
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-source 'ac-sources-c-headers)
+  (add-to-list 'achead:include-directories '"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1
+ /usr/local/include"
+	      ))
 					;now call from c/c++ hooks
 
 
@@ -39,6 +41,8 @@
 (add-hook 'objc-mode-hook 'my:ac-c-header-init)
 (add-hook 'racer-mode-hook #'company-mode)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+
+
 
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
 (setq company-tooltip-align-annotations t)
@@ -76,9 +80,11 @@
  '(custom-safe-themes
    (quote
     ("b0f529f09b32b18ce9192d4fd1379266c1e143999ef5b326a13b7c8bbe0f6a5d" default)))
+ '(linum-relative-current-symbol "->")
+ '(linum-relative-plusp-offset 0)
  '(package-selected-packages
    (quote
-    (doremi rainbow-delimiters browse-kill-ring multiple-cursors flycheck flycheck-rust ## inkpot-theme company racer rainbow-mode exec-path-from-shell cargo rust-mode racket-mode jedi irony iedit ctags-update ctags ac-clang ac-c-headers)))
+    (etags-table linum-relative auctex haskell-mode fzf doremi rainbow-delimiters browse-kill-ring multiple-cursors flycheck flycheck-rust ## inkpot-theme company racer rainbow-mode exec-path-from-shell cargo rust-mode racket-mode jedi irony iedit ctags-update ctags ac-clang ac-c-headers)))
  '(send-mail-function nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

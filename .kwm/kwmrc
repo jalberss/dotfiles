@@ -111,7 +111,7 @@ kwmc config spawn left
     AXWindowRole and AXStandardWindowSubRole
 */
 kwmc rule owner="iTerm2" properties={role="AXDialog"}
-kwmc rule owner="Emacs" properties={role="AXStandardWindow"; space="2";}
+kwmc rule owner="Emacs" properties={role="AXStandardWindow";}
 kwmc rule owner="PyCharm" properties={role="AXStandardWindow"; space="2";}
 kwmc rule owner="iMessage" properties={float="true"}
 kwmc rule owner="Spotify" properties={float="true"}
